@@ -1,16 +1,21 @@
-import App, { bodyParser } from "douh";
-import { router } from "./routes";
+import App, { Router } from "douh";
 
 const app = new App();
+const router = new Router();
 
-(async () => {
-  app.use(bodyParser);
-  app.use(async (_, __, next) => {
-    console.log("middleware");
-    await next();
-  });
+app.use((req, res, next) => {
+  console.log("!!!");
+  next();
+});
 
-  app.use(router.middleware());
+router.get("/ping", (req, res, next) => {
+  return "pong";
+});
 
-  app.listen(3000);
-})();
+router.post("/ping", (req, res, next) => {
+  return "pong";
+});
+
+app.use(router.middleware());
+
+app.listen(1111);
