@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "douh": "0.0.3-beta.2"
+    "douh": "0.0.3-alpha.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
