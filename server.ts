@@ -1,8 +1,9 @@
-import App, { Router } from "douh";
+import App, { Router, serveStatic } from "douh";
 
 const app = new App();
 const router = new Router();
 
+app.use(serveStatic("/public"));
 app.use((req, res, next) => {
   console.log("!!!");
   next();
